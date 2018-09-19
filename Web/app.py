@@ -1,6 +1,6 @@
 #app.py
 
-from flask import Flask, request #import main Flask class and request object
+from flask import Flask, request, render_template #import main Flask class and request object
 import sqlite3
 import json
 
@@ -8,7 +8,16 @@ app = Flask(__name__) #create the Flask app
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    conn = sqlite3.connect('games.db')
+    query = "SELECT * from gamesTBL"
+    cur = conn.cursor()
+    cur.execute(query)
+    data = cur.fetchmany(10)
+    cur.close()
+    return render_template("template.html", data=data)
+
+    #return render_template('template.html', user=user_details)
+    #return "Hello World!"
 
 @app.route('/receive-data', methods=['POST']) #GET requests will be blocked
 def json_example():

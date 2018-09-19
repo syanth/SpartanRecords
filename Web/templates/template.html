@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+        <title>test</title>
+    </head>
+    <body>
+	<h1>Last 10 Games</h1>
+        <table border="1" cellpadding="5" cellspacing="5">
+		<tr>
+			<th>Game ID</th>
+			<th>Player</th>
+			<th>Kills</th>
+			<th>Deaths</th>
+			<th>Assists</th>
+		</tr>
+    {% for row in data %}
+        <tr>
+        {% for d in row %}
+            <td>{{ d }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+    </body>
+</html>
