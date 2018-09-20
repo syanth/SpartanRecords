@@ -28,8 +28,8 @@ void SendData(string data)
 
 	// Specify an HTTP server.
 	if (hSession)
-		hConnect = WinHttpConnect(hSession, L"localhost",
-			5000, 0);
+		hConnect = WinHttpConnect(hSession, L"syanth.pythonanywhere.com",
+			80, 0);
 
 	// Create an HTTP Request handle.
 	if (hConnect)
