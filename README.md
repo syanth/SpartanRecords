@@ -1,5 +1,5 @@
 # SpartanRecords
-Tracks players' stats on Halo: Custom Edition and ranks them.
+Tracks players' stats on Halo: Custom Edition and ranks them. I'm testing it out at http://syanth.pythonanywhere.com.
 
 ### Installation
 
