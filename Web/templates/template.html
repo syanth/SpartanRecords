@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <title>test</title>
     </head>
-    <body>
-	<h1>Last 10 Games</h1>
-        <table border="1" cellpadding="5" cellspacing="5">
+    <body><div class="content">
+	<div id="heading">
+		<div style="width: 100px; float: left;">
+			<img src="{{ url_for('static', filename='images/oni.png') }}" style="width:90px; height:90px;">
+		</div>
+		<div>
+			<p>Office of Naval Intelligence<br />
+			Naval Special Weapons<br />
+			Spartan Records</p>
+		</div>
+	</div>
+	<h2>Last 10 Matches</h2>
+        <table border="1" width=100% class="ranktable">
 		<tr>
 			<th>Game ID</th>
 			<th>Player</th>
@@ -21,6 +32,6 @@
         {% endfor %}
         </tr>
     {% endfor %}
-</table>
-    </body>
+		</table>
+    </div></body>
 </html>
