@@ -1,0 +1,36 @@
+body {
+	background-color: #050505;
+}
+
+#heading {
+	width: 100%;
+	overflow: hidden;
+}
+
+h1, h2, h3, p, .ranktable { 
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	/*font-size: 23px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 23px; } */
+}
+
+.content {
+	padding: 5px;
+	background-color: #161616;
+	max-width: 960px;
+	margin: auto;
+}
+
+.ranktable {
+	padding: 5;
+	border: none;
+}
+
+th, td {
+	padding: 5px;
+	border: none;
+}
+
+
+tr:nth-child(even) {
+    background-color: #050505;
+}
