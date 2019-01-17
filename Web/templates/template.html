@@ -25,7 +25,21 @@
 			<th>Deaths</th>
 			<th>Assists</th>
 		</tr>
-    {% for row in data %}
+    {% for row in tbl1 %}
+        <tr>
+        {% for d in row %}
+            <td>{{ d }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+		</table>
+		
+	<h2>Top 10 Players</h2>
+        <table border="1" width=100% class="ranktable">
+		<tr>
+			<th>Player</th>
+		</tr>
+    {% for row in tbl2 %}
         <tr>
         {% for d in row %}
             <td>{{ d }}</td>

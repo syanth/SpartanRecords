@@ -14,12 +14,17 @@ app = Flask(__name__) #create the Flask app
 def hello():
     #conn = sqlite3.connect('games.db')
     conn = sqlite3.connect(path.join(ROOT, "games.db"))
+	cur = conn.cursor()
     query = "SELECT * from gamesTBL"
-    cur = conn.cursor()
     cur.execute(query)
-    data = cur.fetchmany(10)
+    lastTen = cur.fetchmany(10)
+	
+	query = "SELECT * from playerTBL"
+	cur.execute(query)
+	topTen = cur.fetchmany(10)
+	
     conn.close()
-    return render_template("template.html", data=data)
+    return render_template("template.html", tbl1=lastTen, tbl2=topTen)
 
     #return render_template('template.html', user=user_details)
     #return "Hello World!"
